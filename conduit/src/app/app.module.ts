@@ -2,7 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { SharedModule, HeaderComponent, FooterComponent } from './shared';
+import {
+  SharedModule,
+  HeaderComponent,
+  FooterComponent,
+  ApiService,
+  UserService
+} from './shared';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
@@ -23,7 +29,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     AuthModule,
     rootRouting
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
